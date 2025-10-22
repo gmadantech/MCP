@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: mcpserverremote # Application name used for identification
+
+  datasource:
+    url: jdbc:h2:file:~/chatmemory;AUTO_SERVER=true # H2 database file location and server mode
+    driver-class-name: org.h2.Driver # JDBC driver for H2 database
+    username: madan # Database username
+    password: 12345 # Database password
+
+  h2:
+    console:
+      enabled: true # Enables H2 web console for database inspection
+
+  jpa:
+    hibernate:
+      ddl-auto: update # Automatically update DB schema based on entities
+
+server:
+  port: 8090 # Server Port (Optional, defaults to 8080 if not set)
+
+logging:
+  pattern:
+    console: "%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n"
+
+weather:
+  url-template: "https://wttr.in/%s?format=j1" # URL template for weather API requests; can be used by the MCP client to fetch weather data asynchronously.
+  

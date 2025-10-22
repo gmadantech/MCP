@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "H:\\Test\\"
+      ]
+    },
+    "mcp-server-demo": {
+      "command": "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+      "args": [
+        "-jar",
+        "H:\\Test\\mcpserverstdio-0.0.1-SNAPSHOT.jar"
+      ]
+    }
+  }
+}

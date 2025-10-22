@@ -1,0 +1,30 @@
+# OpenRouter API Configuration via Spring AI OpenAI properties (YAML)
+# IMPORTANT: Replace 'YOUR_OPENROUTER_API_KEY_HERE' with the actual OpenRouter API key.
+# This placeholder MUST be replaced before running the application.
+# Recommended: keep the real key out of source control and use an environment variable:
+#   spring.ai.openai.api-key: ${OPENROUTER_API_KEY}
+spring:
+  application:
+    name: mcpclientdemo
+  ai:
+    mcp:
+      timeout: 60000
+      client:
+        stdio:
+          servers-configuration: "classpath:mcp-servers.json"
+        #sse.connections.mcpserverremote.url: "http://localhost:8090"
+    openai:
+      api-key: "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"
+      # Point Spring AI to the OpenRouter base URL
+      base-url: "https://openrouter.ai/api"
+      # Default chat model options for OpenRouter
+      chat:
+        options:
+          model: "meta-llama/llama-4-maverick:free"
+          # Optional: Uncomment and adjust if needed
+          # temperature: 0.7
+          # max-tokens: 256
+
+# Server Port (Optional, defaults to 8080 if not set)
+server:
+  port: 8020
